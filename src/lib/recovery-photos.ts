@@ -81,11 +81,94 @@ export const RECOVERY_PHOTOS = {
     src: "/images/recovery/silver-mercedes-flatbed-recovery.webp",
     alt: "Silver Mercedes coupé secured on a flatbed beside a road barrier",
   },
+  silverBmwWorkshop: {
+    src: "/images/recovery/silver-bmw-workshop-transport.webp",
+    alt: "Silver BMW secured to a flatbed outside a workshop",
+  },
+  whiteBmwStreet: {
+    src: "/images/recovery/white-bmw-street-recovery.webp",
+    alt: "White BMW on a grey recovery truck parked on a street",
+  },
+  whiteVan: {
+    src: "/images/recovery/white-panel-van-recovery.webp",
+    alt: "White panel van secured to a flatbed with wheel straps",
+  },
+  damagedCarForecourt: {
+    src: "/images/recovery/damaged-car-forecourt-recovery.webp",
+    alt: "Car with front-end damage on a flatbed at a petrol station",
+  },
+  nightGolf: {
+    src: "/images/recovery/volkswagen-golf-night-recovery.webp",
+    alt: "Grey Volkswagen Golf on a recovery truck beneath a footbridge at night",
+  },
+  twoVanRecovery: {
+    src: "/images/recovery/two-van-flatbed-recovery.webp",
+    alt: "Two recovery trucks each carrying a van",
+  },
+  blueBmwNight: {
+    src: "/images/recovery/blue-bmw-night-recovery.webp",
+    alt: "Blue BMW secured to a flatbed under petrol station lights at night",
+  },
+  damagedSilverCar: {
+    src: "/images/recovery/silver-car-front-end-damage-recovery.webp",
+    alt: "Silver car with front-end damage strapped to a grey recovery truck",
+  },
+  whiteMercedesEstate: {
+    src: "/images/recovery/white-mercedes-estate-transport.webp",
+    alt: "White Mercedes estate secured to a grey flatbed",
+  },
+  damagedBmwNight: {
+    src: "/images/recovery/damaged-bmw-night-recovery.webp",
+    alt: "Dark BMW with front-end damage on a flatbed at night",
+  },
+  silverAmgNight: {
+    src: "/images/recovery/mercedes-amg-hatchback-night-transport.webp",
+    alt: "Silver Mercedes AMG hatchback on a flatbed with its rear lights on",
+  },
+  whiteSuvStreet: {
+    src: "/images/recovery/white-suv-street-transport.webp",
+    alt: "White SUV strapped to a flatbed on a residential street",
+  },
+  redAudi: {
+    src: "/images/recovery/red-audi-hatchback-recovery.webp",
+    alt: "Red Audi hatchback secured to a flatbed beside a brick house",
+  },
+  greenFordNight: {
+    src: "/images/recovery/green-ford-hatchback-night-recovery.webp",
+    alt: "Green Ford hatchback strapped to a recovery truck with its amber lights on",
+  },
+  blueNissan: {
+    src: "/images/recovery/blue-nissan-flatbed-loading.webp",
+    alt: "Blue Nissan SUV partway up the ramps of a flatbed",
+  },
+  blackMotorbike: {
+    src: "/images/recovery/motorbike-flatbed-recovery.webp",
+    alt: "Black motorbike secured to a recovery truck with green straps",
+  },
+  truckWinch: {
+    src: "/images/recovery/flatbed-recovery-winch.webp",
+    alt: "Red electric winch and steel cable mounted on a recovery truck",
+  },
+  blackHonda: {
+    src: "/images/recovery/black-honda-flatbed-transport.webp",
+    alt: "Black Honda hatchback secured to a flatbed with green trim",
+  },
+  suvTransporters: {
+    src: "/images/recovery/suv-transport-trailers.webp",
+    alt: "Two SUVs secured on transport trailers in a vehicle yard",
+  },
+  recoveryTruckTraffic: {
+    src: "/images/recovery/flatbed-recovery-truck-in-traffic.webp",
+    alt: "Black flatbed recovery truck in a line of traffic",
+  },
 } satisfies Record<string, RecoveryPhoto>;
 
 export const SERVICE_PHOTOS: Partial<Record<string, RecoveryPhoto>> = {
   "roadside-recovery": RECOVERY_PHOTOS.roadsideCar,
   "breakdown-recovery": RECOVERY_PHOTOS.bmwBreakdown,
+  "motorbike-recovery": RECOVERY_PHOTOS.blackMotorbike,
+  "winch-recovery": RECOVERY_PHOTOS.truckWinch,
+  "vans-minibuses-light-commercials": RECOVERY_PHOTOS.whiteVan,
   "sports-car-recovery": RECOVERY_PHOTOS.redSportsCar,
   "accident-recovery": RECOVERY_PHOTOS.damagedHatchback,
   "auction-salvage-yard-pickups": RECOVERY_PHOTOS.wednesburyAuction,
