@@ -207,9 +207,48 @@ export const SERVICE_PHOTOS: Partial<Record<string, RecoveryPhoto>> = {
   "roadside-recovery": RECOVERY_PHOTOS.roadsideCar,
   "breakdown-recovery": RECOVERY_PHOTOS.bmwBreakdown,
   "motorbike-recovery": RECOVERY_PHOTOS.blackMotorbike,
-  "winch-recovery": RECOVERY_PHOTOS.truckWinch,
   "vans-minibuses-light-commercials": RECOVERY_PHOTOS.whiteVan,
   "sports-car-recovery": RECOVERY_PHOTOS.redSportsCar,
   "accident-recovery": RECOVERY_PHOTOS.damagedHatchback,
   "auction-salvage-yard-pickups": RECOVERY_PHOTOS.wednesburyAuction,
+  "fuel-delivery-birmingham": {
+    src: "/images/services/fuel-delivery-birmingham.webp",
+    alt: "Technician carrying a fuel can to a parked hatchback",
+  },
+  "motorway-recovery": {
+    src: "/images/services/motorway-recovery.webp",
+    alt: "Flatbed recovery truck carrying a car at a motorway service area",
+  },
+  "battery-jump-start": {
+    src: "/images/services/battery-jump-start.webp",
+    alt: "Technician using a portable jump starter under a car bonnet",
+  },
+  "dvsa-recovery": {
+    src: "/images/services/dvsa-recovery.webp",
+    alt: "White commercial van on a recovery truck at a vehicle inspection yard",
+  },
+  "scrap-car-van-service": {
+    src: "/images/services/scrap-car-van-service.webp",
+    alt: "Older hatchback on a flatbed at a vehicle dismantling yard",
+  },
+  "tyre-changeover": {
+    src: "/images/services/tyre-changeover.webp",
+    alt: "Technician replacing a car wheel with a spare",
+  },
+  "mobile-car-battery-fitting": {
+    src: "/images/services/mobile-car-battery-fitting.webp",
+    alt: "Technician fitting a replacement car battery under the bonnet",
+  },
+  "caravans-motorhomes": {
+    src: "/images/services/caravans-motorhomes.webp",
+    alt: "White motorhome secured on a heavy-duty recovery truck",
+  },
+  "forklift-collection-drop-off": {
+    src: "/images/services/forklift-collection-drop-off.webp",
+    alt: "Orange forklift secured on a low-bed transport truck",
+  },
+  "winch-recovery": {
+    src: "/images/services/winch-recovery-ditch.webp",
+    alt: "Recovery truck winching a hatchback out of a grassy roadside ditch",
+  },
 };
