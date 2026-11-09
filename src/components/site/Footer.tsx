@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 import { SITE, telLink, waLink } from "@/lib/site";
@@ -8,7 +9,9 @@ export function Footer() {
     <footer className="mt-24 border-t border-white/5 bg-[#0a0a0a]">
       <div className="container-x grid gap-12 py-16 md:grid-cols-4">
         <div className="md:col-span-2 max-w-md">
-          <Link href="/" className="text-lg font-bold gold-text">{SITE.name}</Link>
+          <Link href="/" className="inline-flex">
+            <Image src="/images/brand/on-call-247-logo.webp" alt={SITE.name} width={860} height={212} unoptimized className="h-auto w-52" />
+          </Link>
           <p className="mt-4 text-[15px] text-muted-foreground">
             Based in Birmingham, we provide 24/7 breakdown recovery locally and arrange vehicle transport across the UK.
           </p>

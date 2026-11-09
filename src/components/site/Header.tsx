@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -21,7 +22,7 @@ export function Header() {
     <header className="sticky top-0 z-40 backdrop-blur-xl" style={{ background: "rgba(8,8,8,0.6)", borderBottom: "1px solid rgb(255 255 255 / 0.06)" }}>
       <div className="container-x flex h-18 items-center justify-between py-3">
         <Link href="/" className="flex items-center">
-          <span className="leading-tight font-bold"><span className="gold-text">On-Call 24/7</span><br /><span className="text-xs font-medium">Breakdown Recovery</span></span>
+          <Image src="/images/brand/on-call-247-logo.webp" alt={SITE.name} width={860} height={212} unoptimized loading="eager" className="h-auto w-45 md:w-40 lg:w-52" />
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
@@ -29,7 +30,7 @@ export function Header() {
             <Link
               key={n.to}
               href={n.to}
-              className="rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground aria-[current=page]:bg-white/5 aria-[current=page]:text-foreground"
+              className="rounded-full px-2 py-2 text-sm text-muted-foreground lg:px-3.5 transition-colors hover:text-foreground aria-[current=page]:bg-white/5 aria-[current=page]:text-foreground"
               aria-current={pathname === n.to ? "page" : undefined}
             >
               {n.label}

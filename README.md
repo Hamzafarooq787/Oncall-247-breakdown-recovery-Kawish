@@ -17,6 +17,6 @@ Open http://localhost:3000. To check the production build, run `npm run build`.
 
 Set `SITE_URL` to the final public HTTPS origin in the hosting settings. It is used for canonical URLs, social metadata, the sitemap and the robots sitemap link. Without it, pages use noindex.
 
-The header uses the business name as text. Recovery photos are stored as WebP in `public/images/recovery`. Add the approved logo, favicon and social preview image when they are ready.
+The header and footer use the WebP logo in `public/images/brand`. The site icon is in `src/app/icon.png`. The social preview uses the homepage image in `public/images/brand` and resolves against `SITE_URL` or the Vercel production hostname. Recovery photos are stored as WebP in `public/images/recovery`.
 
 Service descriptions and contact details are in `src/lib/site.ts`. The enquiry form opens a pre-filled WhatsApp message. The visitor sends the message in WhatsApp.
