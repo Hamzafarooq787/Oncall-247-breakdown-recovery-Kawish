@@ -161,6 +161,46 @@ export const RECOVERY_PHOTOS = {
     src: "/images/recovery/flatbed-recovery-truck-in-traffic.webp",
     alt: "Black flatbed recovery truck in a line of traffic",
   },
+  miltonKeynesAudi: {
+    src: "/images/recovery/milton-keynes-audi-flatbed-transport.webp",
+    alt: "White Audi on a recovery truck outside the Milton Keynes Audi dealership",
+  },
+  redPeugeot: {
+    src: "/images/recovery/red-peugeot-flatbed-recovery.webp",
+    alt: "Red Peugeot secured to a flatbed outside an industrial yard",
+  },
+  blackSkoda: {
+    src: "/images/recovery/black-skoda-hatchback-flatbed.webp",
+    alt: "Black Škoda hatchback loaded onto a white recovery truck",
+  },
+  blackAudiStreet: {
+    src: "/images/recovery/black-audi-roadside-flatbed-transport.webp",
+    alt: "Black Audi secured to a flatbed on a wet street",
+  },
+  damagedHatchbackNight: {
+    src: "/images/recovery/damaged-silver-hatchback-night-recovery.webp",
+    alt: "Silver hatchback with front-end damage on a recovery truck at night",
+  },
+  redSuvForecourt: {
+    src: "/images/recovery/red-suv-evening-flatbed-recovery.webp",
+    alt: "Grey recovery truck carrying a red SUV under petrol station lights",
+  },
+  blackBmwWorkshop: {
+    src: "/images/recovery/black-bmw-workshop-flatbed-transport.webp",
+    alt: "Black BMW secured by wheel straps on a flatbed outside a workshop",
+  },
+  silverFordNight: {
+    src: "/images/recovery/silver-ford-night-street-recovery.webp",
+    alt: "Silver Ford hatchback on a flatbed with amber lights on a street at night",
+  },
+  blackMercedesSuv: {
+    src: "/images/recovery/black-mercedes-suv-flatbed-transport.webp",
+    alt: "Black Mercedes SUV strapped to a flatbed outside a commercial building",
+  },
+  blueHatchbackNight: {
+    src: "/images/recovery/blue-hatchback-night-flatbed-recovery.webp",
+    alt: "Blue hatchback on a black recovery truck at a petrol station at night",
+  },
 } satisfies Record<string, RecoveryPhoto>;
 
 export const SERVICE_PHOTOS: Partial<Record<string, RecoveryPhoto>> = {

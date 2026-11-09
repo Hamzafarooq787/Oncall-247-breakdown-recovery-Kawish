@@ -1,3 +1,4 @@
+import { RECOVERY_PHOTOS } from "@/lib/recovery-photos";
 import { pageMetadata } from "@/lib/seo";
 
 import { MapPin, Phone } from "lucide-react";
@@ -17,6 +18,7 @@ export default function CoveragePage() {
   return (
     <>
       <PageHero
+        photo={RECOVERY_PHOTOS.miltonKeynesAudi.src}
         eyebrow="Coverage"
         title={<>Based in Birmingham. <span className="gold-text">Covering the UK.</span></>}
         sub="We handle local recovery around Birmingham and longer trips across the UK. Call or WhatsApp with your location to check availability."
