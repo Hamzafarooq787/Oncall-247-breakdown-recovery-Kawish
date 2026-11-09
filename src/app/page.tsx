@@ -1,5 +1,7 @@
 import { pageMetadata } from "@/lib/seo";
+import Image from "next/image";
 import Link from "next/link";
+import { RECOVERY_PHOTOS, SERVICE_PHOTOS } from "@/lib/recovery-photos";
 import * as motion from "motion/react-client";
 import {
   Phone, MessageCircle, Clock, ShieldCheck, MapPin, Star, ArrowRight, Zap,
@@ -32,8 +34,9 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
-        <div aria-hidden="true" className="media-placeholder h-full w-full" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.85) 60%, #050505 100%)" }} />
+        <Image src={RECOVERY_PHOTOS.nightTruck.src} alt="" fill unoptimized loading="eager" fetchPriority="high" className="object-cover object-[50%_68%]" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(5,5,5,0.64) 0%, rgba(5,5,5,0.48) 62%, #050505 100%)" }} />
+        <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/55 to-black/10" />
         <div className="absolute inset-0" style={{ background: "radial-gradient(800px 400px at 80% 30%, rgba(255,208,0,0.18), transparent 60%)" }} />
       </div>
 
@@ -145,10 +148,15 @@ function Services() {
 }
 
 function ServiceCard({ slug, title, short }: typeof SERVICES[number]) {
+  const photo = SERVICE_PHOTOS[slug];
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/8 bg-gradient-to-b from-white/5 to-white/[0.02] transition-all duration-500 hover:-translate-y-1.5 hover:border-[color:var(--gold)]/30 hover:shadow-[0_30px_60px_-20px_rgba(255,208,0,0.25)]">
-      <div className="media-placeholder grid aspect-square place-items-center overflow-hidden">
-        <Truck aria-hidden="true" className="h-14 w-14 text-gold/50 transition-transform duration-700 group-hover:scale-105" />
+      <div className="media-placeholder relative grid aspect-square place-items-center overflow-hidden">
+        {photo ? (
+          <Image {...photo} fill unoptimized className="object-cover object-[50%_64%] transition-transform duration-700 group-hover:scale-105" />
+        ) : (
+          <Truck aria-hidden="true" className="h-14 w-14 text-gold/50 transition-transform duration-700 group-hover:scale-105" />
+        )}
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-[22px] font-semibold">{title}</h3>
@@ -199,7 +207,9 @@ function About() {
       <div className="container-x grid items-center gap-12 lg:grid-cols-2">
         <Reveal dir="right">
           <div className="relative overflow-hidden rounded-3xl border border-white/10">
-            <div aria-hidden="true" className="media-placeholder aspect-[4/3] w-full" />
+            <div className="media-placeholder relative aspect-[4/3]">
+              <Image {...RECOVERY_PHOTOS.coastalTruck} fill unoptimized className="object-cover object-[50%_65%]" />
+            </div>
             <div className="absolute bottom-5 left-5 right-5 glass flex items-center gap-3 p-4">
               <ShieldCheck className="h-6 w-6 text-[color:var(--gold)]" />
               <div>
@@ -228,6 +238,7 @@ function About() {
           </ul>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/about" className="btn-ghost text-sm">About the team <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/about#recovery-gallery" className="btn-ghost text-sm">Recovery photos <ArrowRight className="h-4 w-4" /></Link>
             <a href={telLink} className="btn-gold text-sm"><Phone className="h-4 w-4" /> Speak to us</a>
           </div>
         </Reveal>
@@ -357,7 +368,7 @@ function CTABanner() {
       <div className="container-x">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border border-[color:var(--gold)]/20">
-            <div aria-hidden="true" className="media-placeholder absolute inset-0" />
+            <Image src={RECOVERY_PHOTOS.eveningSuv.src} alt="" fill unoptimized className="object-cover object-[50%_65%] opacity-55" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(120deg, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.55) 70%, rgba(5,5,5,0.2) 100%)" }} />
             <div className="relative grid gap-8 p-8 md:grid-cols-[1.4fr_1fr] md:items-center md:p-12">
               <div>

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { SERVICE_PHOTOS } from "@/lib/recovery-photos";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Phone, MessageCircle, ArrowLeft, CheckCircle2 } from "lucide-react";
@@ -28,7 +29,8 @@ export default async function ServiceDetail({ params }: Props) {
   return (
     <>
       <PageHero
-        eyebrow={"Service"}
+        photo={SERVICE_PHOTOS[slug]?.src}
+        eyebrow="Service"
         title={<>{service.title}</>}
         sub={service.short}
       />

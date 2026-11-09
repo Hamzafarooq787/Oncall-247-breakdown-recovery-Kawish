@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { RECOVERY_PHOTOS } from "@/lib/recovery-photos";
 import { pageMetadata } from "@/lib/seo";
 
 import { CheckCircle2, ShieldCheck, Award, Users, Phone } from "lucide-react";
@@ -26,7 +28,9 @@ export default function AboutPage() {
           </Reveal>
           <Reveal dir="left">
             <div className="overflow-hidden rounded-3xl border border-white/10">
-              <div aria-hidden="true" className="media-placeholder aspect-[4/3] w-full" />
+              <div className="media-placeholder relative aspect-[4/3]">
+                <Image {...RECOVERY_PHOTOS.blackAmg} fill unoptimized className="object-cover object-[50%_62%]" />
+              </div>
             </div>
           </Reveal>
         </div>
@@ -76,6 +80,22 @@ export default function AboutPage() {
         </div>
         <div className="container-x mt-10 text-center">
           <a href={telLink} className="btn-gold"><Phone className="h-5 w-5" /> Speak to the team · {SITE.phoneDisplay}</a>
+        </div>
+      </section>
+
+      <section id="recovery-gallery" aria-labelledby="recovery-gallery-title" className="section-pad scroll-mt-16">
+        <div className="container-x">
+          <h2 id="recovery-gallery-title" className="text-3xl md:text-4xl">
+            Recovery <span className="gold-text">photo gallery</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground">See our flatbeds, roadside recoveries and vehicle collections.</p>
+          <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+            {Object.values(RECOVERY_PHOTOS).map(photo => (
+              <li key={photo.src} className="media-placeholder relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/10">
+                <Image {...photo} fill unoptimized className="object-cover object-[50%_62%]" />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

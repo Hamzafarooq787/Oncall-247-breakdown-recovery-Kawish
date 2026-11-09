@@ -1,11 +1,16 @@
+import Image from "next/image";
 import { Phone, MessageCircle } from "lucide-react";
 import { SITE, telLink, waLink } from "@/lib/site";
 
-export function PageHero({ eyebrow, title, sub }: { eyebrow: string; title: React.ReactNode; sub: string }) {
+export function PageHero({ eyebrow, title, sub, photo }: { eyebrow: string; title: React.ReactNode; sub: string; photo?: string }) {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
-        <div aria-hidden="true" className="media-placeholder h-full w-full" />
+        {photo ? (
+          <Image src={photo} alt="" fill unoptimized loading="eager" className="object-cover object-[50%_62%] opacity-60" />
+        ) : (
+          <div aria-hidden="true" className="media-placeholder h-full w-full" />
+        )}
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(5,5,5,0.6), #050505 90%)" }} />
         <div className="absolute inset-0" style={{ background: "radial-gradient(700px 350px at 80% 20%, rgba(255,208,0,0.18), transparent 60%)" }} />
       </div>

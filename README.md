@@ -17,6 +17,6 @@ Open http://localhost:3000. To check the production build, run `npm run build`.
 
 Set `SITE_URL` to the final public HTTPS origin in the hosting settings. It is used for canonical URLs, social metadata, the sitemap and the robots sitemap link. Without it, pages use noindex.
 
-The header uses the business name as text. Photo areas keep the reference layout with temporary styling. Add the approved logo, photos, favicon and social preview image when they are ready.
+The header uses the business name as text. Recovery photos are stored as WebP in `public/images/recovery`. Add the approved logo, favicon and social preview image when they are ready.
 
 Service descriptions and contact details are in `src/lib/site.ts`. The enquiry form opens a pre-filled WhatsApp message. The visitor sends the message in WhatsApp.
