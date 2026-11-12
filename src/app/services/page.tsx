@@ -1,4 +1,4 @@
-import { PageHero, InlineCTA } from "@/components/site/PageSections";
+import { PageHero, InlineCTA, RecoveryBanner } from "@/components/site/PageSections";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import { SERVICES, telLink } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
 
 
-export const metadata = pageMetadata("Recovery Services in Birmingham | On-Call 24/7", "Browse all 17 services from On-Call 24/7, including breakdown recovery, winch recovery, fuel delivery in Birmingham and booked vehicle transport.", "/services");
+export const metadata = pageMetadata("Recovery Services in Birmingham | On-Call 24/7", "Browse recovery services from On-Call 24/7, including breakdown recovery, ditch pull outs, mud pull outs and booked vehicle transport.", "/services");
 
 export default function ServicesPage() {
   return (
@@ -22,7 +22,8 @@ export default function ServicesPage() {
 
       <section className="section-pad">
         <div className="container-x">
-          <div className="grid gap-6 lg:grid-cols-2">
+          <RecoveryBanner />
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {SERVICES.map((s, i) => {
               const photo = SERVICE_PHOTOS[s.slug];
               return (

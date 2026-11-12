@@ -45,3 +45,12 @@ export function InlineCTA() {
     </section>
   );
 }
+
+export function RecoveryBanner() {
+  return (
+    <aside aria-label="Recovery timing and insurance" className="mt-6 rounded-2xl border border-gold/25 bg-gold/5 px-5 py-4">
+      <p className="text-sm font-semibold text-gold">Recovery typically 30-45 mins where possible | Fully insured 24/7* company you can trust</p>
+      <p className="mt-1 text-xs text-muted-foreground">*24/7 availability depends on your location and the circumstances of the recovery.</p>
+    </aside>
+  );
+}

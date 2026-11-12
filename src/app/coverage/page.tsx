@@ -4,6 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 import { MapPin, Phone } from "lucide-react";
 import { SITE, telLink } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
+import { AreaCoverage } from "@/components/site/AreaCoverage";
 import { PageHero, InlineCTA } from "@/components/site/PageSections";
 
 const areas = [
@@ -43,6 +44,10 @@ export default function CoveragePage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      <section className="container-x pb-16">
+        <AreaCoverage />
       </section>
 
       <InlineCTA />

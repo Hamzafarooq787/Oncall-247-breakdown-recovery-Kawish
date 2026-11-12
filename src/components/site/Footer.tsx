@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
-import { SITE, telLink, waLink } from "@/lib/site";
-import { SERVICES } from "@/lib/site";
+import { SERVICES, SITE, telLink, waLink } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -24,7 +23,7 @@ export function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Services</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            {SERVICES.slice(0, 5).map(service => (
+            {SERVICES.slice(0, 7).map(service => (
               <li key={service.slug}><Link href={`/services/${service.slug}`} className="hover:text-gold">{service.title}</Link></li>
             ))}
             <li><Link href="/services" className="hover:text-gold">All services</Link></li>
@@ -39,6 +38,10 @@ export function Footer() {
             <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> Birmingham and UK-wide recovery</li>
             <li className="flex items-start gap-2"><Clock className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> {SITE.hours}</li>
           </ul>
+          <nav aria-label="Customer information" className="mt-6 space-y-2 text-sm">
+            <Link href="/#faq" className="block hover:text-gold">FAQs</Link>
+            <Link href="/terms-and-conditions" className="block hover:text-gold">Terms and Conditions</Link>
+          </nav>
         </div>
       </div>
       <div className="border-t border-white/5">

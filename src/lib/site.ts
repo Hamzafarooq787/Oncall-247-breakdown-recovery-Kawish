@@ -38,9 +38,21 @@ export const SERVICES = [
   },
   {
     slug: "winch-recovery", title: "Winch Recovery",
-    short: "Ditch and mud pull-outs for vehicles that cannot move under their own power.",
-    long: "Winch recovery can help pull a vehicle out of a ditch or free one stuck in mud. Share a map pin and, if you can take them safely, photos of the vehicle and the surrounding ground. We use those details to assess access and confirm what the recovery involves.",
-    details: ["Ditch pull-outs", "Mud pull-outs", "Photos showing the ground and access"],
+    short: "Winch-assisted loading for vehicles that cannot be driven onto a recovery truck.",
+    long: "If your vehicle will not move under its own power, a winch may help load it for transport. Tell us whether the wheels roll and steer, and share any access restrictions so we can assess the job.",
+    details: ["Vehicle condition", "Whether the wheels roll and steer", "Space and access for the recovery truck"],
+  },
+  {
+    slug: "ditch-pull-out", title: "Ditch Pull Out",
+    short: "Recovery for vehicles that have left the road and come to rest in a ditch.",
+    long: "Share a map pin and describe the ditch, the position of the vehicle and the space next to the road. Photos taken from a safe place can help us assess whether a winch can be used and how to reach the vehicle.",
+    details: ["Exact location and road access", "Vehicle position and visible damage", "Photos from a safe place, if available"],
+  },
+  {
+    slug: "pull-out-from-mud", title: "Pull Out from Mud",
+    short: "Help freeing vehicles stuck in mud on tracks, verges or soft ground.",
+    long: "Tell us how deeply the vehicle is stuck and where the nearest firm access point is. If you can take photos safely, show the ground around the vehicle and the route in so we can assess whether a winch pull is suitable.",
+    details: ["Map pin and nearest firm access point", "Depth of the mud and position of the wheels", "Any gates or access restrictions"],
   },
   {
     slug: "sports-car-recovery", title: "Sports Car Recovery",

@@ -8,6 +8,8 @@ import {
   CheckCircle2, Wrench, Truck, AlertTriangle, ChevronDown,
 } from "lucide-react";
 import { SITE, SERVICES, telLink, waLink } from "@/lib/site";
+import { AreaCoverage } from "@/components/site/AreaCoverage";
+import { RecoveryBanner } from "@/components/site/PageSections";
 import { Reveal } from "@/components/site/Reveal";
 
 
@@ -124,7 +126,14 @@ function TrustStrip() {
   );
 }
 
+const homeServiceSlugs = [
+  "roadside-recovery", "breakdown-recovery", "motorbike-recovery",
+  "ditch-pull-out", "pull-out-from-mud", "motorway-recovery",
+  "battery-jump-start", "accident-recovery",
+];
+
 function Services() {
+  const featuredServices = SERVICES.filter(service => homeServiceSlugs.includes(service.slug));
   return (
     <section id="services" className="section-pad relative">
       <div className="container-x">
@@ -134,14 +143,15 @@ function Services() {
           <p className="mt-4 text-muted-foreground">From a breakdown to a vehicle stuck in mud, here are some of the jobs we can help with.</p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {[SERVICES[0], SERVICES[1], SERVICES[4], SERVICES[6], SERVICES[7], SERVICES[9]].map((s, i) => (
+        <RecoveryBanner />
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredServices.map((s, i) => (
             <Reveal key={s.slug} delay={i * 0.05}>
               <ServiceCard {...s} />
             </Reveal>
           ))}
         </div>
-        <Link href="/services" className="btn-ghost mt-8">View all 17 services <ArrowRight className="h-4 w-4" /></Link>
+        <Link href="/services" className="btn-ghost mt-8">View all {SERVICES.length} services <ArrowRight className="h-4 w-4" /></Link>
       </div>
     </section>
   );
@@ -228,7 +238,8 @@ function About() {
             {[
               "24/7 phone and WhatsApp",
               "Local breakdown recovery",
-              "Ditch and mud pull-outs",
+              "Ditch Pull Out",
+              "Pull Out from Mud",
               "Booked vehicle collections",
             ].map((t) => (
               <li key={t} className="flex items-start gap-2 text-sm">
@@ -252,7 +263,7 @@ function Stats() {
     { title: "24/7", label: "Call and WhatsApp" },
     { title: "Local", label: "Birmingham roadside recovery" },
     { title: "UK-wide", label: "Vehicle transport" },
-    { title: "17", label: "Recovery and roadside services" },
+    { title: String(SERVICES.length), label: "Recovery and roadside services" },
   ];
   return (
     <section className="border-y border-white/5 bg-black/40">
@@ -294,6 +305,7 @@ function Coverage() {
           </div>
         </Reveal>
       </div>
+      <div className="container-x mt-12"><AreaCoverage /></div>
     </section>
   );
 }
@@ -301,7 +313,7 @@ function Coverage() {
 function WhyChooseUs() {
   const reasons = [
     { title: "Call any time", description: "Phone or WhatsApp us for recovery day or night.", icon: Clock },
-    { title: "Help with awkward recoveries", description: "Ask about winching a vehicle out of a ditch or freeing one stuck in mud.", icon: ShieldCheck },
+    { title: "Help with awkward recoveries", description: "We assess difficult access and ground conditions before planning how to recover your vehicle.", icon: ShieldCheck },
     { title: "Local and long-distance jobs", description: "We handle local Birmingham recoveries and arrange vehicle transport across the UK.", icon: Truck },
   ];
   return (
@@ -330,10 +342,15 @@ function WhyChooseUs() {
 function FAQ() {
   const faqs = [
     { q: "Are you available at night?", a: "Yes. You can call or WhatsApp us 24 hours a day, seven days a week. Share your location so we can check availability for your job." },
-    { q: "Can you pull a vehicle out of a ditch or mud?", a: "Yes. We cover both under winch recovery. Send a map pin and photos if you can take them safely so we can assess access." },
-    { q: "Do you cover areas outside Birmingham?", a: "Yes. We’re based in Birmingham and cover local and UK-wide recovery. Fuel delivery is listed for Birmingham." },
+    { q: "Can you pull a vehicle out of a ditch?", a: "Yes. For a ditch pull out, send a map pin and describe where the vehicle is sitting. Photos taken from a safe place help us assess access." },
+    { q: "Can you free a vehicle stuck in mud?", a: "Yes. For a mud pull out, tell us how deeply the vehicle is stuck and where the nearest firm access point is. Send photos if you can take them safely." },
+    { q: "Do you cover areas outside Birmingham?", a: "Yes. We cover nearby towns including Wolverhampton, Coventry and Worcester, and arrange longer vehicle transport across the UK. Fuel delivery is listed for Birmingham." },
     { q: "What should I send for a quote?", a: "Send the vehicle registration, pickup location, destination and what happened. Let us know if the vehicle can roll and steer." },
     { q: "Can I book an auction yard collection?", a: "Yes. Send the yard name, lot number, collection slot and destination. Check the yard’s release instructions before booking." },
+    { q: "How long might recovery take?", a: "Where possible, we typically arrive within 30–45 minutes. Traffic, location, access and the job can affect the estimate. Call for an estimate for your location." },
+    { q: "Can you take my vehicle to a garage of my choice?", a: "Yes. Send the garage name and postcode so we can check the route and agree the drop-off. If the garage is closed, check whether it can accept a delivery out of hours." },
+    { q: "Can you collect from a car park with a height barrier?", a: "Tell us the height limit, which level the vehicle is on and whether there are any locked gates. We’ll use those details to check access before confirming the job." },
+    { q: "Can I arrange recovery in advance?", a: "Yes. Share the pickup and drop-off postcodes, your preferred date and whether the vehicle rolls and steers so we can check availability." },
   ];
   return (
     <section id="faq" className="section-pad">

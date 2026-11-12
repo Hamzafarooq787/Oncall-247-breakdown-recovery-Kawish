@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Phone, MessageCircle, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { SERVICES, SITE, telLink, waLink } from "@/lib/site";
-import { PageHero, InlineCTA } from "@/components/site/PageSections";
+import { PageHero, InlineCTA, RecoveryBanner } from "@/components/site/PageSections";
 
 
 type Props = { params: Promise<{ slug: string }> };
@@ -35,6 +35,8 @@ export default async function ServiceDetail({ params }: Props) {
         sub={service.short}
       />
 
+      <div className="container-x"><RecoveryBanner /></div>
+
       <section className="section-pad">
         <div className="container-x grid gap-12 lg:grid-cols-[1.4fr_1fr]">
           <article>
@@ -51,6 +53,13 @@ export default async function ServiceDetail({ params }: Props) {
                 </div>
               ))}
             </div>
+
+            {slug === "winch-recovery" && (
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/services/ditch-pull-out" className="btn-ghost text-sm">Ditch Pull Out</Link>
+                <Link href="/services/pull-out-from-mud" className="btn-ghost text-sm">Pull Out from Mud</Link>
+              </div>
+            )}
 
             <h3 className="mt-12 text-2xl font-semibold">How a booking works</h3>
             <ol className="mt-4 space-y-3 text-sm text-muted-foreground">

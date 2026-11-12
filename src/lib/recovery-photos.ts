@@ -141,10 +141,6 @@ export const RECOVERY_PHOTOS = {
     src: "/images/recovery/blue-nissan-flatbed-loading.webp",
     alt: "Blue Nissan SUV partway up the ramps of a flatbed",
   },
-  blackMotorbike: {
-    src: "/images/recovery/motorbike-flatbed-recovery.webp",
-    alt: "Black motorbike secured to a recovery truck with green straps",
-  },
   truckWinch: {
     src: "/images/recovery/flatbed-recovery-winch.webp",
     alt: "Red electric winch and steel cable mounted on a recovery truck",
@@ -206,7 +202,10 @@ export const RECOVERY_PHOTOS = {
 export const SERVICE_PHOTOS: Partial<Record<string, RecoveryPhoto>> = {
   "roadside-recovery": RECOVERY_PHOTOS.roadsideCar,
   "breakdown-recovery": RECOVERY_PHOTOS.bmwBreakdown,
-  "motorbike-recovery": RECOVERY_PHOTOS.blackMotorbike,
+  "motorbike-recovery": {
+    src: "/images/services/motorbike-recovery.webp",
+    alt: "Blue motorbike secured on a flatbed recovery truck",
+  },
   "vans-minibuses-light-commercials": RECOVERY_PHOTOS.whiteVan,
   "sports-car-recovery": RECOVERY_PHOTOS.redSportsCar,
   "accident-recovery": RECOVERY_PHOTOS.damagedHatchback,
@@ -247,7 +246,12 @@ export const SERVICE_PHOTOS: Partial<Record<string, RecoveryPhoto>> = {
     src: "/images/services/forklift-collection-drop-off.webp",
     alt: "Orange forklift secured on a low-bed transport truck",
   },
-  "winch-recovery": {
+  "winch-recovery": RECOVERY_PHOTOS.truckWinch,
+  "pull-out-from-mud": {
+    src: "/images/services/pull-out-from-mud.webp",
+    alt: "Silver SUV stuck in mud with a recovery truck ahead",
+  },
+  "ditch-pull-out": {
     src: "/images/services/winch-recovery-ditch.webp",
     alt: "Recovery truck winching a hatchback out of a grassy roadside ditch",
   },
