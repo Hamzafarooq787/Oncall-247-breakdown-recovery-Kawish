@@ -126,32 +126,25 @@ function TrustStrip() {
   );
 }
 
-const homeServiceSlugs = [
-  "roadside-recovery", "breakdown-recovery", "motorbike-recovery",
-  "ditch-pull-out", "pull-out-from-mud", "motorway-recovery",
-  "battery-jump-start", "accident-recovery",
-];
-
 function Services() {
-  const featuredServices = SERVICES.filter(service => homeServiceSlugs.includes(service.slug));
   return (
     <section id="services" className="section-pad relative">
       <div className="container-x">
         <Reveal className="max-w-2xl">
           <span className="chip">Our services</span>
           <h2 className="mt-4 text-[28px] md:text-[42px]">Roadside help and <span className="gold-text">vehicle recovery.</span></h2>
-          <p className="mt-4 text-muted-foreground">From a breakdown to a vehicle stuck in mud, here are some of the jobs we can help with.</p>
+          <p className="mt-4 text-muted-foreground">From a breakdown to a vehicle stuck in mud, find the right service for your vehicle.</p>
         </Reveal>
 
         <RecoveryBanner />
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredServices.map((s, i) => (
-            <Reveal key={s.slug} delay={i * 0.05}>
+          {SERVICES.map((s, i) => (
+            <Reveal key={s.slug} delay={(i % 3) * 0.05}>
               <ServiceCard {...s} />
             </Reveal>
           ))}
         </div>
-        <Link href="/services" className="btn-ghost mt-8">View all {SERVICES.length} services <ArrowRight className="h-4 w-4" /></Link>
+        <Link href="/services" className="btn-ghost mt-8">Browse the Services page <ArrowRight className="h-4 w-4" /></Link>
       </div>
     </section>
   );
