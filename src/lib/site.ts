@@ -6,6 +6,9 @@ export const SITE = {
   areas: ["Birmingham", "West Midlands", "Across the UK"],
 };
 
+export const WEST_MIDLANDS_COVERAGE = "Breakdown recovery across the whole West Midlands, including Birmingham, Wolverhampton, Dudley, Walsall, Sandwell, Solihull and Coventry.";
+export const UK_RECOVERY_COVERAGE = "We have drivers nationwide and provide breakdown recovery anywhere in the UK.";
+
 export const telLink = "tel:+447425953894";
 export function waLink(message = "Hi, I'd like to ask about vehicle recovery.") {
   return `https://wa.me/447425953894?text=${encodeURIComponent(message)}`;

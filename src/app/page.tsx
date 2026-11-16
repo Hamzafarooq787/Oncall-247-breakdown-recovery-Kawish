@@ -7,13 +7,14 @@ import {
   Phone, MessageCircle, Clock, ShieldCheck, MapPin, Star, ArrowRight, Zap,
   CheckCircle2, Wrench, Truck, AlertTriangle, ChevronDown,
 } from "lucide-react";
-import { SITE, SERVICES, telLink, waLink } from "@/lib/site";
+import { SITE, SERVICES, UK_RECOVERY_COVERAGE, WEST_MIDLANDS_COVERAGE, telLink, waLink } from "@/lib/site";
+import { CoverageMap } from "@/components/site/CoverageMap";
 import { AreaCoverage } from "@/components/site/AreaCoverage";
 import { RecoveryBanner } from "@/components/site/PageSections";
 import { Reveal } from "@/components/site/Reveal";
 
 
-export const metadata = pageMetadata("24/7 Breakdown Recovery Birmingham | On-Call", "On-Call 24/7 Breakdown Recovery is based in Birmingham and covers the UK. Call for roadside help, breakdown recovery, winch pull-outs and vehicle transport.", "/");
+export const metadata = pageMetadata("24/7 Breakdown Recovery | West Midlands & UK | On-Call", "On-Call 24/7 provides breakdown recovery across the West Midlands and anywhere in the UK, with drivers nationwide. Call or WhatsApp to check availability.", "/");
 
 export default function Home() {
   return (
@@ -45,14 +46,14 @@ function Hero() {
       <div className="container-x relative pt-20 pb-28 md:pt-28 md:pb-36">
         <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="flex flex-wrap items-center gap-2">
           <span className="chip"><span className="h-2 w-2 rounded-full bg-[color:var(--gold)] animate-pulse" /> Open now · 24/7 emergency cover</span>
-          <span className="chip"><Star className="h-3.5 w-3.5 text-[color:var(--gold)]" /> Birmingham-based team</span>
+          <span className="chip"><Star className="h-3.5 w-3.5 text-[color:var(--gold)]" /> Drivers nationwide</span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.05 }}
           className="mt-6 max-w-4xl text-[34px] font-bold leading-[1.05] tracking-tight md:text-[64px]"
         >
-          <span className="gold-text">24/7 breakdown recovery</span> in Birmingham and across the UK.
+          <span className="gold-text">24/7 breakdown recovery</span> across the West Midlands and the UK.
         </motion.h1>
 
         <motion.p
@@ -79,8 +80,8 @@ function Hero() {
           className="mt-14 grid max-w-3xl gap-3 sm:grid-cols-3"
         >
           <Badge icon={<Clock className="h-4 w-4" />} title="24/7" sub="Day, night, weekends" />
-          <Badge icon={<Zap className="h-4 w-4" />} title="Birmingham" sub="Local roadside recovery" />
-          <Badge icon={<ShieldCheck className="h-4 w-4" />} title="UK-wide" sub="Long-distance vehicle transport" />
+          <Badge icon={<Zap className="h-4 w-4" />} title="West Midlands" sub="Regional roadside recovery" />
+          <Badge icon={<ShieldCheck className="h-4 w-4" />} title="UK-wide" sub="Breakdown recovery and transport" />
         </motion.div>
 
         <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 md:flex">
@@ -217,7 +218,7 @@ function About() {
               <ShieldCheck className="h-6 w-6 text-[color:var(--gold)]" />
               <div>
                 <div className="text-sm font-semibold">On call 24 hours a day</div>
-                <div className="text-xs text-muted-foreground">Birmingham and UK-wide coverage</div>
+                <div className="text-xs text-muted-foreground">West Midlands and UK-wide coverage</div>
               </div>
             </div>
           </div>
@@ -226,7 +227,7 @@ function About() {
         <Reveal dir="left">
           <span className="chip">About us</span>
           <h2 className="mt-4 text-[28px] md:text-[40px]">Based in Birmingham. <span className="gold-text">Covering the UK.</span></h2>
-          <p className="mt-4 text-muted-foreground">We help drivers who have broken down and people who need to move a vehicle. Call for local roadside recovery in Birmingham or arrange a longer trip across the UK.</p>
+          <p className="mt-4 text-muted-foreground">We help drivers who have broken down and people who need to move a vehicle. Our drivers provide breakdown recovery and vehicle transport across the UK.</p>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {[
               "24/7 phone and WhatsApp",
@@ -254,8 +255,8 @@ function About() {
 function Stats() {
   const stats = [
     { title: "24/7", label: "Call and WhatsApp" },
-    { title: "Local", label: "Birmingham roadside recovery" },
-    { title: "UK-wide", label: "Vehicle transport" },
+    { title: "Local", label: "West Midlands roadside recovery" },
+    { title: "UK-wide", label: "Breakdown recovery and transport" },
     { title: String(SERVICES.length), label: "Recovery and roadside services" },
   ];
   return (
@@ -280,8 +281,8 @@ function Coverage() {
       <div className="container-x grid items-center gap-12 lg:grid-cols-2">
         <Reveal>
           <span className="chip"><MapPin className="h-3.5 w-3.5 text-[color:var(--gold)]" /> Coverage area</span>
-          <h2 className="mt-4 text-[28px] md:text-[40px]">Local to Birmingham. <span className="gold-text">Available UK-wide.</span></h2>
-          <p className="mt-4 text-muted-foreground">We cover Birmingham and the surrounding area for local recovery, with longer vehicle moves available across the UK. Share both postcodes so we can check your route.</p>
+          <h2 className="mt-4 text-[28px] md:text-[40px]">West Midlands coverage. <span className="gold-text">Drivers nationwide.</span></h2>
+          <p className="mt-4 text-muted-foreground">On-Call 24/7 – {WEST_MIDLANDS_COVERAGE} {UK_RECOVERY_COVERAGE}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {SITE.areas.map((a) => (
               <span key={a} className="chip"><MapPin className="h-3 w-3 text-[color:var(--gold)]" /> {a}</span>
@@ -293,9 +294,7 @@ function Coverage() {
         </Reveal>
 
         <Reveal dir="left">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black">
-            <iframe className="aspect-[4/3] w-full" title="Map of Birmingham, our recovery base" src="https://www.google.com/maps?q=Birmingham,+UK&output=embed" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" />
-          </div>
+          <CoverageMap />
         </Reveal>
       </div>
       <div className="container-x mt-12"><AreaCoverage /></div>
@@ -307,7 +306,7 @@ function WhyChooseUs() {
   const reasons = [
     { title: "Call any time", description: "Phone or WhatsApp us for recovery day or night.", icon: Clock },
     { title: "Help with awkward recoveries", description: "We assess difficult access and ground conditions before planning how to recover your vehicle.", icon: ShieldCheck },
-    { title: "Local and long-distance jobs", description: "We handle local Birmingham recoveries and arrange vehicle transport across the UK.", icon: Truck },
+    { title: "Drivers across the UK", description: UK_RECOVERY_COVERAGE, icon: Truck },
   ];
   return (
     <section className="section-pad bg-[color:var(--surface)]/40">
@@ -337,7 +336,7 @@ function FAQ() {
     { q: "Are you available at night?", a: "Yes. You can call or WhatsApp us 24 hours a day, seven days a week. Share your location so we can check availability for your job." },
     { q: "Can you pull a vehicle out of a ditch?", a: "Yes. For a ditch pull out, send a map pin and describe where the vehicle is sitting. Photos taken from a safe place help us assess access." },
     { q: "Can you free a vehicle stuck in mud?", a: "Yes. For a mud pull out, tell us how deeply the vehicle is stuck and where the nearest firm access point is. Send photos if you can take them safely." },
-    { q: "Do you cover areas outside Birmingham?", a: "Yes. We cover nearby towns including Wolverhampton, Coventry and Worcester, and arrange longer vehicle transport across the UK. Fuel delivery is listed for Birmingham." },
+    { q: "Do you provide breakdown recovery across the UK?", a: `Yes. ${UK_RECOVERY_COVERAGE} Send your pickup postcode so we can check availability. Our emergency fuel delivery service is listed separately for Birmingham.` },
     { q: "What should I send for a quote?", a: "Send the vehicle registration, pickup location, destination and what happened. Let us know if the vehicle can roll and steer." },
     { q: "Can I book an auction yard collection?", a: "Yes. Send the yard name, lot number, collection slot and destination. Check the yard’s release instructions before booking." },
     { q: "How long might recovery take?", a: "Where possible, we typically arrive within 30–45 minutes. Traffic, location, access and the job can affect the estimate. Call for an estimate for your location." },

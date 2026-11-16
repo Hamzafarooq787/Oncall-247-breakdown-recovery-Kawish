@@ -8,7 +8,7 @@ import { SERVICES, telLink } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
 
 
-export const metadata = pageMetadata("Recovery Services in Birmingham | On-Call 24/7", "Browse recovery services from On-Call 24/7, including breakdown recovery, ditch pull outs, mud pull outs and booked vehicle transport.", "/services");
+export const metadata = pageMetadata("West Midlands & UK Recovery Services | On-Call 24/7", "Browse recovery services from On-Call 24/7, including breakdown recovery, ditch pull outs, mud pull outs and booked vehicle transport.", "/services");
 
 export default function ServicesPage() {
   return (
@@ -17,7 +17,7 @@ export default function ServicesPage() {
         photo={RECOVERY_PHOTOS.greySuv.src}
         eyebrow="Our services"
         title={<>Vehicle recovery and <span className="gold-text">roadside help.</span></>}
-        sub="Choose a service to see what we can help with and what to have ready when you call. We’re based in Birmingham and cover local and UK-wide recoveries."
+        sub="Choose a service to see what we can help with and what to have ready when you call. We provide breakdown recovery across the West Midlands and have drivers across the UK."
       />
 
       <section className="section-pad">

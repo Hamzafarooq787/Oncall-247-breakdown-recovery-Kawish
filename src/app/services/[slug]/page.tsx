@@ -79,7 +79,7 @@ export default async function ServiceDetail({ params }: Props) {
                 <a href={waLink(`Hi, I need help with: ${service.title}`)} target="_blank" rel="noopener noreferrer" className="btn-wa justify-center"><MessageCircle className="h-4 w-4" /> WhatsApp us</a>
               </div>
               <div className="mt-6 border-t border-white/10 pt-5 text-xs text-muted-foreground">
-                Available 24/7 · Based in Birmingham
+                {slug === "fuel-delivery-birmingham" ? "Available 24/7 · Birmingham fuel delivery" : "Available 24/7 · Nationwide recovery team"}
               </div>
             </div>
           </aside>

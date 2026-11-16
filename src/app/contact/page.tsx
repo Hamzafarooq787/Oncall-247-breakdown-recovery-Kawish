@@ -6,7 +6,7 @@ import { SITE, telLink, waLink } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
 import { PageHero } from "@/components/site/PageSections";
 
-export const metadata = pageMetadata("Contact On-Call 24/7 Breakdown Recovery", "Call +44 7425 953894 or send a WhatsApp enquiry for breakdown recovery in Birmingham and across the UK.", "/contact");
+export const metadata = pageMetadata("Contact On-Call 24/7 Breakdown Recovery", "Call +44 7425 953894 or send a WhatsApp enquiry for breakdown recovery in the West Midlands and across the UK.", "/contact");
 
 export default function ContactPage() {
   return (
@@ -24,7 +24,7 @@ export default function ContactPage() {
               <ContactCard icon={<Phone className="h-5 w-5" />} title="Call 24/7" value={SITE.phoneDisplay} href={telLink} />
               <ContactCard icon={<MessageCircle className="h-5 w-5" />} title="WhatsApp" value="Send us a message" href={waLink()} external />
               <ContactCard icon={<Mail className="h-5 w-5" />} title="Email" value={SITE.email} href={`mailto:${SITE.email}`} />
-              <ContactCard icon={<MapPin className="h-5 w-5" />} title="Service area" value="Birmingham and across the UK" />
+              <ContactCard icon={<MapPin className="h-5 w-5" />} title="Service area" value="West Midlands and UK-wide" />
               <ContactCard icon={<Clock className="h-5 w-5" />} title="Hours" value={SITE.hours} />
             </div>
           </Reveal>

@@ -12,7 +12,7 @@ export function Footer() {
             <Image src="/images/brand/on-call-247-logo.webp" alt={SITE.name} width={860} height={212} unoptimized className="h-auto w-52" />
           </Link>
           <p className="mt-4 text-[15px] text-muted-foreground">
-            Based in Birmingham, we provide 24/7 breakdown recovery locally and arrange vehicle transport across the UK.
+            We provide 24/7 breakdown recovery across the West Midlands and anywhere in the UK, with drivers nationwide.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={telLink} className="btn-gold text-sm"><Phone className="h-4 w-4" /> {SITE.phoneDisplay}</a>
@@ -35,7 +35,7 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> <a href={telLink}>{SITE.phoneDisplay}</a></li>
             <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> <a className="min-w-0 break-all" href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
-            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> Birmingham and UK-wide recovery</li>
+            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> West Midlands and UK-wide recovery</li>
             <li className="flex items-start gap-2"><Clock className="mt-0.5 h-4 w-4 text-[color:var(--gold)]" /> {SITE.hours}</li>
           </ul>
           <nav aria-label="Customer information" className="mt-6 space-y-2 text-sm">

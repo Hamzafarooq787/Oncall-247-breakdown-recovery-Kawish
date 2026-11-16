@@ -1,5 +1,5 @@
 const regionalAreas = [
-  "Birmingham city centre", "Wolverhampton", "Coventry", "Worcester",
+  "Birmingham city centre", "Wolverhampton", "Coventry", "Sandwell", "Worcester",
   "Lichfield", "Stoke-on-Trent", "Derby", "Leicester", "Gloucester", "Hereford",
   "Walsall", "Dudley", "Solihull", "Bromsgrove", "Redditch", "Kidderminster",
   "Bewdley", "Bridgnorth", "Shrewsbury", "Stafford", "Burton-upon-Trent",
@@ -24,7 +24,7 @@ export function AreaCoverage() {
     <section aria-labelledby="area-coverage" className="glass p-6 md:p-8">
       <h2 id="area-coverage" className="text-2xl font-semibold md:text-3xl">Area Coverage</h2>
       <p className="mt-3 text-sm text-muted-foreground">Share your pickup postcode so we can check availability for your recovery.</p>
-      <h3 className="mt-6 text-lg font-semibold">Birmingham and surrounding towns</h3>
+      <h3 className="mt-6 text-lg font-semibold">West Midlands and surrounding areas</h3>
       <ul className="mt-3 flex flex-wrap gap-2 text-sm">
         {regionalAreas.map(area => <li key={area} className="chip">{area}</li>)}
       </ul>

@@ -46,7 +46,7 @@ export default function AboutPage() {
             {[
               { i: <ShieldCheck className="h-5 w-5" />, t: "24/7 contact", d: "Call or WhatsApp any time for help with a breakdown." },
               { i: <Award className="h-5 w-5" />, t: "Planned collections", d: "Share the pickup window and site requirements for booked transport." },
-              { i: <Users className="h-5 w-5" />, t: "Birmingham base", d: "We cover local jobs and arrange longer vehicle moves across the UK." },
+              { i: <Users className="h-5 w-5" />, t: "Birmingham base", d: "We have drivers nationwide for breakdown recovery and vehicle transport across the UK." },
               { i: <CheckCircle2 className="h-5 w-5" />, t: "Quotes for your job", d: "Ask for a quote based on your vehicle, location and destination." },
             ].map((f) => (
               <Reveal key={f.t}>
