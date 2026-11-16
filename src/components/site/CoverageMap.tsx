@@ -1,11 +1,11 @@
 export function CoverageMap() {
   return (
-    <div>
+    <div className="mx-auto w-full max-w-md">
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black">
         <iframe
-          className="aspect-[4/3] max-h-[480px] w-full"
-          title="Map of the United Kingdom, our nationwide breakdown recovery area"
-          src="https://www.google.com/maps?q=United+Kingdom&z=5&output=embed"
+          className="block aspect-[3/4] w-full"
+          title="West Midlands map centred between Wolverhampton and Coventry"
+          src="https://www.google.com/maps?ll=52.49,-1.89&z=9&output=embed"
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
         />
