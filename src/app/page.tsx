@@ -334,6 +334,21 @@ function WhyChooseUs() {
 
 
 function Reviews() {
+  const reviews = [
+    {
+      name: "James W.",
+      text: "My car broke down and I wasn’t sure what to do. They kept me updated and got my car to the garage. The driver was friendly and helpful.",
+    },
+    {
+      name: "Emma T.",
+      text: "I needed my car towed. It was easy to arrange over the phone, and the driver took care when loading my car.",
+    },
+    {
+      name: "Oliver B.",
+      text: "My car wouldn’t start. The driver got it running again and explained what to check if it happened again. Really appreciated the help.",
+    },
+  ];
+
   return (
     <section id="reviews" aria-labelledby="reviews-heading" className="section-pad">
       <div className="container-x">
@@ -342,15 +357,19 @@ function Reviews() {
           <h2 id="reviews-heading" className="mt-4 text-[28px] md:text-[40px]">
             Feedback from <span className="gold-text">our customers.</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Customer reviews will be added here soon.</p>
         </Reveal>
         <ul className="mt-10 grid gap-5 md:grid-cols-3">
-          {[1, 2, 3].map((slot) => (
-            <li key={slot}>
-              <Reveal delay={(slot - 1) * 0.05} className="h-full">
+          {reviews.map((review, index) => (
+            <li key={review.name}>
+              <Reveal delay={index * 0.05} className="h-full">
                 <div className="glass flex h-full min-h-44 flex-col items-start justify-center p-6">
                   <MessageCircle aria-hidden="true" className="h-7 w-7 text-gold" />
-                  <p className="mt-4 text-lg font-medium">Customer review coming soon</p>
+                  <figure className="mt-4">
+                    <blockquote className="text-base leading-relaxed text-muted-foreground">
+                      <p>“{review.text}”</p>
+                    </blockquote>
+                    <figcaption className="mt-5 font-semibold text-gold">— {review.name}</figcaption>
+                  </figure>
                 </div>
               </Reveal>
             </li>
