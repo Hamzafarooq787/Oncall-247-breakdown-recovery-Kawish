@@ -27,6 +27,7 @@ export default function Home() {
       <Stats />
       <Coverage />
       <WhyChooseUs />
+      <Reviews />
       <FAQ />
       <CTABanner />
     </>
@@ -326,6 +327,38 @@ function WhyChooseUs() {
             </Reveal>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+
+function Reviews() {
+  return (
+    <section id="reviews" aria-labelledby="reviews-heading" className="section-pad">
+      <div className="container-x">
+        <Reveal className="max-w-2xl">
+          <span className="chip">Customer reviews</span>
+          <h2 id="reviews-heading" className="mt-4 text-[28px] md:text-[40px]">
+            Feedback from <span className="gold-text">our customers.</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground">Customer reviews will be added here soon.</p>
+        </Reveal>
+        <ul className="mt-10 grid gap-5 md:grid-cols-3">
+          {[1, 2, 3].map((slot) => (
+            <li key={slot}>
+              <Reveal delay={(slot - 1) * 0.05} className="h-full">
+                <div className="glass flex h-full min-h-44 flex-col items-start justify-center p-6">
+                  <MessageCircle aria-hidden="true" className="h-7 w-7 text-gold" />
+                  <p className="mt-4 text-lg font-medium">Customer review coming soon</p>
+                </div>
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+        <a href={waLink("Hi, I'd like a quote for vehicle recovery.")} target="_blank" rel="noopener noreferrer" className="btn-wa mt-8">
+          <MessageCircle className="h-4 w-4" /> Get a quote
+        </a>
       </div>
     </section>
   );
